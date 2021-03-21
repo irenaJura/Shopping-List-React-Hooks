@@ -40,7 +40,10 @@ const App = () => (
                 render={(props) => lists && <Lists lists={lists} {...props} />}
               />
               <Route path="/list/:id/new" component={Form} />
-              <Route path="/list/:id" component={List} />
+              <Route
+                path="/list/:id"
+                render={(props) => lists && <List lists={lists} {...props} />}
+              />
             </Switch>
           )}
         </ListsContext.Consumer>
